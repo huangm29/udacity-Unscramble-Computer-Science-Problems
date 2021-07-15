@@ -1,0 +1,23 @@
+Run Time Analysis:
+Task0: O(1)
+Task 0 only performs a single print, which is independent of the input. Therefore the run
+time is O(1).
+
+Task1: O(N+M)
+Task 1 needs to loop over the texts and calls list once, therefore the run time should be 
+linear to the number of elements in "texts" (M) and "calls" (N)
+
+Task2: O(N)
+Task 2 loops over the calls and do a summation for every call in calls. The max function 
+which finds the maximum of a value in an iterable also scale linearly.Therefore the run
+ time is linearly dependent to the number of elements in "calls"
+
+Task3: O(N long N)
+Task 3 first loop over the calls list, therefore the run time scales as O(N). However, the 
+dominating part is the sorting process which scales as O(N log N). Since N is large, there-
+fore O(N) < O(N log N). In total, the runtime scales as O(N log N).
+
+Tasks4: O(N log N)
+Again, the sorting process which scales as O(N log N) should be dominating in run time. In 
+the worst case, the number of telemakers should be the same as the number of calls. As a 
+result, the run time scales as O(N log N).
