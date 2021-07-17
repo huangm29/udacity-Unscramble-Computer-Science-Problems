@@ -18,5 +18,7 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
-phone_number = {text[i] for i in range(2) for text in texts} | {call[i] for i in range(2) for call in calls}
-print(F"There are {len(phone_number)} different telephone numbers in the records.")
+phone_number = {text[i] for i in range(2) for text in texts} | {
+    call[i] for i in range(2) for call in calls}
+print(
+    F"There are {len(phone_number)} different telephone numbers in the records.")

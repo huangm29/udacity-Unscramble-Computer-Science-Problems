@@ -45,37 +45,42 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
+
 def is_fixed_Bangalore(number):
-  return number[:5] == '(080)'
+    return number[:5] == '(080)'
+
 
 def is_fixed(number):
-  return number[:2] == '(0'
+    return number[:2] == '(0'
+
 
 def is_mobile(number):
-  return number[0] == '7' or number[0] == '8' or number[0] == '9' and ' ' in number
+    return number[0] == '7' or number[0] == '8' or number[0] == '9' and ' ' in number
+
 
 def is_tele(number):
-  return number[:3] == '140'
+    return number[:3] == '140'
+
 
 set_of_codes = set()
 calls_from_fixed_Bangal = 0
 calls_counted = 0
 for call in calls:
-  if is_fixed_Bangalore(call[0]): #From Bangalor
-    calls_from_fixed_Bangal += 1
-    if is_fixed(call[1]):
-      last_index = call[1].find(')')
-      set_of_codes.add(call[1][1:last_index])
-    if is_mobile(call[1]):
-      set_of_codes.add(call[1][:4])
-    if is_tele(call[1]):
-      set_of_codes.add('140')
-    if is_fixed_Bangalore(call[1]):
-      calls_counted +=1
-    
+    if is_fixed_Bangalore(call[0]):  # From Bangalor
+        calls_from_fixed_Bangal += 1
+        if is_fixed(call[1]):
+            last_index = call[1].find(')')
+            set_of_codes.add(call[1][1:last_index])
+        if is_mobile(call[1]):
+            set_of_codes.add(call[1][:4])
+        if is_tele(call[1]):
+            set_of_codes.add('140')
+        if is_fixed_Bangalore(call[1]):
+            calls_counted += 1
+
 set_of_codes = sorted(set_of_codes)
 print("The numbers called by people in Bangalore have codes:")
 for code in set_of_codes:
-  print(code)
-percentage = round(calls_counted/calls_from_fixed_Bangal*100,2)
+    print(code)
+percentage = round(calls_counted / calls_from_fixed_Bangal * 100, 2)
 print(F"{percentage} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore")

@@ -36,4 +36,3 @@ telemakers = sorted(telemakers)
 print("These numbers could be telemarketers: ")
 for num in telemakers:
     print(num)
-
